@@ -1,3 +1,4 @@
+// do not touch Items class!
 export class Item {
   name: string;
   sellIn: number;
@@ -11,6 +12,7 @@ export class Item {
 }
 
 export class GildedRose {
+  // do not touch items property!
   items: Array<Item>;
 
   constructor(items = [] as Array<Item>) {
