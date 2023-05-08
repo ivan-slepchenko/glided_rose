@@ -5,7 +5,7 @@
     - [x] Aged Brie should decrease value when time to sell is over? or still raise value? **-YES**
 - [ ] write tests to cover new functionality
 - [ ] fix code to match specification
-  - [ ] It should be not possible to construct item with more than 50 quality.
+  - [x] It should be not possible to fill GlidedRose with item which has more than 50 quality.
   - [ ] Aged Brie should decrease quality when time to sell is passed
 - [ ] refactorization
   - [x] I want to introduce CONSTANTS

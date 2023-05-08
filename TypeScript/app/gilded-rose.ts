@@ -18,7 +18,19 @@ export class GildedRose {
   items: Array<Item>;
 
   constructor(items = [] as Array<Item>) {
-    this.items = items;
+    this.items = this.invalidateAnAssignItems(items);
+  }
+
+  invalidateAnAssignItems(items: Item[]): Item[] {
+    // The Quality of an item is never more than 50
+    return items.map(item => {
+      if(item.quality <= 50) {
+        return item;
+      } else {
+        console.warn('Item was updated to be 50 max in its quality', item);
+        return new Item(item.name, item.sellIn, Math.min(50, item.quality))
+      }
+    });
   }
 
   updateQuality() {
