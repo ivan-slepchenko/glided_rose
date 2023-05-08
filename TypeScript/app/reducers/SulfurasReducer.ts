@@ -1,9 +1,12 @@
-import { Reducer } from "@/reducers/Reducer";
+import { RegularReducer } from "@/reducers/RegularReducer";
 import {Item} from "@/gildedRose";
 
-export class SulfurasReducer extends Reducer{
+export class SulfurasReducer extends RegularReducer{
+
+  static NAME: string = 'Sulfuras Reducer';
+
   constructor() {
-    super('Sulfuras Reducer');
+    super(SulfurasReducer.NAME);
   }
 
   updateQuality(item: Item) {

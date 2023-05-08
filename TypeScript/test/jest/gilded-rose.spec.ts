@@ -1,5 +1,10 @@
 import { Item, GildedRose } from '@/gildedRose';
 import {AGED_BRIE, BACKSTAGE, SULFURAS} from "@/itemNames";
+import {getReducerForItem} from "@/reducers/reducers";
+import {BackstageReducer} from "@/reducers/BackstageReducer";
+import {AgedBrieReducer} from "@/reducers/AgedBrieReducer";
+import {SulfurasReducer} from "@/reducers/SulfurasReducer";
+import {RegularReducer} from "@/reducers/RegularReducer";
 
 describe('Gilded Rose', () => {
   const testDecreasingByTwoWhenSellByDateIsPassed = (itemName: string) => {
@@ -17,6 +22,33 @@ describe('Gilded Rose', () => {
       expect(items[0].quality).toBe(2);
     })
   }
+  describe('Reducer By Item Name', () => {
+    it('should return Backstage reducer for name with "Backstage passes" in it', ()=>{
+      const item = new Item('Backstage passes to some event', 10, 8);
+      const reducer = getReducerForItem(item);
+      expect(reducer.name).toBe(BackstageReducer.NAME)
+    });
+    it('should return Backstage reducer for name with "backstage Passes" in it, independent on case', ()=>{
+      const item = new Item('backstage Passes to some event', 10, 8);
+      const reducer = getReducerForItem(item);
+      expect(reducer.name).toBe(BackstageReducer.NAME)
+    })
+    it('should return AgedBrie reducer for name with "aged brie" in it, independent on case', ()=>{
+      const item = new Item('aged Brie from Ukraine', 10, 8);
+      const reducer = getReducerForItem(item);
+      expect(reducer.name).toBe(AgedBrieReducer.NAME)
+    })
+    it('should return Sulfuras reducer for name with "sulfuras" in it, independent on case', ()=>{
+      const item = new Item('sulfuras of god', 10, 8);
+      const reducer = getReducerForItem(item);
+      expect(reducer.name).toBe(SulfurasReducer.NAME)
+    })
+    it('should return Regular reducer for other cases', ()=>{
+      const item = new Item('some item', 10, 8);
+      const reducer = getReducerForItem(item);
+      expect(reducer.name).toBe(RegularReducer.NAME)
+    })
+  });
   describe('Regular Item', () => {
     it('quality should degrade by one if sell by date has not passed', ()=>{
       const gildedRose = new GildedRose([new Item('regular item', 10, 8)]);

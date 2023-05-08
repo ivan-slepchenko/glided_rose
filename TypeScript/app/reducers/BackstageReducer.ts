@@ -1,9 +1,12 @@
-import { Reducer } from "@/reducers/Reducer";
+import { RegularReducer } from "@/reducers/RegularReducer";
 import {Item} from "@/gildedRose";
 
-export class BackstageReducer extends Reducer {
+export class BackstageReducer extends RegularReducer {
+
+  static NAME: string = 'Backstage Reducer';
+
   constructor() {
-    super('Backstage Reducer');
+    super(BackstageReducer.NAME);
   }
 
   updateQuality(item: Item) {

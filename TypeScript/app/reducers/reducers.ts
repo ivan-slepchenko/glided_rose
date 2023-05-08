@@ -1,10 +1,10 @@
 import { AgedBrieReducer } from "@/reducers/AgedBrieReducer";
 import { SulfurasReducer } from "@/reducers/SulfurasReducer";
 import { BackstageReducer } from "@/reducers/BackstageReducer";
-import { Reducer } from "@/reducers/Reducer";
+import { RegularReducer } from "@/reducers/RegularReducer";
 import { Item } from "@/gildedRose";
 
-export const REGULAR_REDUCER = new Reducer();
+export const REGULAR_REDUCER = new RegularReducer();
 export const AGED_BRIE_REDUCER = new AgedBrieReducer();
 export const SULFURAS_REDUCER = new SulfurasReducer();
 export const BACKSTAGE_REDUCER = new BackstageReducer();

@@ -1,10 +1,12 @@
 import {Item} from "@/gildedRose";
 
-export class Reducer {
+export class RegularReducer {
+
+  static NAME: string = 'Regular Reducer';
 
   name: string;
 
-  constructor(name: string = 'Regular Reducer') {
+  constructor(name: string = RegularReducer.NAME) {
     this.name = name;
   }
 
