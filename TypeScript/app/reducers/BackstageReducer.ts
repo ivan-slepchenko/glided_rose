@@ -1,9 +1,7 @@
-import Reducer from "@/reducers/Reducer";
+import { Reducer } from "@/reducers/Reducer";
 
-class BackstageReducer extends Reducer {
+export class BackstageReducer extends Reducer {
   constructor() {
     super('Backstage Reducer');
   }
 }
-
-export default BackstageReducer;

@@ -13,5 +13,9 @@
   - [x] I want to introduce item, instead of asking array by index each time 
   - [ ] I want to remove redundant code branching
   - [ ] I want each item to have its own reducer function that is returned from item name
+    - [x] Regular Item Reducer
+    - [ ] Backstage Reducer
+    - [ ] Aged Brie Reducer
+    - [ ] Sulfaras Reducer
   
   

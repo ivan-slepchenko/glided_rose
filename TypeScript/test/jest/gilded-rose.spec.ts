@@ -1,4 +1,4 @@
-import { Item, GildedRose } from '@/gilded-rose';
+import { Item, GildedRose } from '@/gildedRose';
 import {AGED_BRIE, BACKSTAGE, SULFURAS} from "@/itemNames";
 
 describe('Gilded Rose', () => {
