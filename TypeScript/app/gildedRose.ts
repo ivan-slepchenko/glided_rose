@@ -39,7 +39,7 @@ export class GildedRose {
       const item = this.items[i];
       switch (item.name) {
         case AGED_BRIE:
-          this.updateQualityOld(item);
+          getReducerForItem(item).reduce(item);
           break;
         case SULFURAS:
           this.updateQualityOld(item);
