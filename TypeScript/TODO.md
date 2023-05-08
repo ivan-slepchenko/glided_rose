@@ -1,6 +1,12 @@
 - [x] review the code
-- [x] fix tests
-- [ ] write tests to cover current functionality
+- [x] fix initial tests
+- [x] write tests to cover current quality functionality
+  - [x] clarify if the current code works or not.
+    - [x] Aged Brie should decrease value when time to sell is over? or still raise value? **-YES**
+- [ ] write tests to cover new functionality
+- [ ] fix code to match specification
+  - [ ] It should be not possible to construct item with more than 50 quality.
+  - [ ] Aged Brie should decrease quality when time to sell is passed
 - [ ] refactorization
   - [ ] I want to introduce CONSTANTS
   - [ ] I want to introduce item, instead of asking array by index each time 
