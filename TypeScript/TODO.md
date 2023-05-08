@@ -4,9 +4,9 @@
   - [x] clarify if the current code works or not.
     - [x] Aged Brie should decrease value when time to sell is over? or still raise value? **-YES**
 - [ ] write tests to cover new functionality
-- [ ] fix code to match specification
+- [x] fix code to match specification
   - [x] It should be not possible to fill GlidedRose with item which has more than 50 quality.
-  - [ ] Aged Brie should decrease quality when time to sell is passed
+  - [x] Aged Brie should decrease quality when time to sell is passed **-DO NOT NEED TO BE FIXED**
 - [ ] refactorization
   - [x] I want to introduce CONSTANTS
   - [ ] I want to rename gilded-rose.ts filename to be in camelCase

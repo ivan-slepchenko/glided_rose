@@ -38,7 +38,6 @@ describe('Gilded Rose', () => {
     })
   });
   describe(AGED_BRIE, () => {
-    //TODO: Fix behaviour I will consider it as a bug, and will consider Aged Brie to decrease in value when time to sell is over like regular item, but it increases in value when there is time to sell left.
     testIncreasingInQualityWhenThereIs20DaysToSell(AGED_BRIE);
     it('should increase in quality the older it gets when there 10 days or less to sell', () => {
       const gildedRose = new GildedRose([new Item(AGED_BRIE, 10, 1)]);
@@ -54,7 +53,13 @@ describe('Gilded Rose', () => {
       items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(3);
     })
-    testDecreasingByTwoWhenSellByDateIsPassed(AGED_BRIE)
+    it('should increase in quality by 2 after time to sell is passed', () => {
+      const gildedRose = new GildedRose([new Item(AGED_BRIE, -1, 1)]);
+      let items = gildedRose.updateQuality();
+      expect(items[0].quality).toBe(3);
+      items = gildedRose.updateQuality();
+      expect(items[0].quality).toBe(5);
+    })
     it('quality should never be more than 50 when sell in is positive', () =>{
       const gildedRose = new GildedRose([new Item(AGED_BRIE, 1, 50)]);
       let items = gildedRose.updateQuality();
@@ -71,7 +76,7 @@ describe('Gilded Rose', () => {
       expect(items[0].quality).toBe(50);
     })
   })
-  describe(BACKSTAGE, ()=>{
+  describe('Backstage', ()=>{
     testIncreasingInQualityWhenThereIs20DaysToSell(BACKSTAGE);
     it('quality increases by 2 when there are only 10 days or less to sell it', ()=> {
       const gildedRose = new GildedRose([new Item(BACKSTAGE, 10, 7)]);
