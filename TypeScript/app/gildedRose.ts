@@ -1,5 +1,3 @@
-// do not touch Items class!
-import {AGED_BRIE, BACKSTAGE, SULFURAS} from "@/itemNames";
 import {getReducerForItem} from "@/reducers/reducers";
 
 export class Item {
@@ -15,7 +13,6 @@ export class Item {
 }
 
 export class GildedRose {
-  // do not touch items property!
   items: Array<Item>;
 
   constructor(items = [] as Array<Item>) {
