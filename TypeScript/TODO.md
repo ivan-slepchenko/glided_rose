@@ -9,8 +9,8 @@
   - [x] Aged Brie should decrease quality when time to sell is passed **-DO NOT NEED TO BE FIXED**
 - [ ] refactorization
   - [x] I want to introduce CONSTANTS
-  - [ ] I want to rename gilded-rose.ts filename to be in camelCase
-  - [ ] I want to introduce item, instead of asking array by index each time 
+  - [x] I want to rename gilded-rose.ts filename to be in camelCase
+  - [x] I want to introduce item, instead of asking array by index each time 
   - [ ] I want each item to have its own reducer function that is returned from item name
   - [ ] I want to remove redundant code branching
   
