@@ -1,5 +1,6 @@
 // do not touch Items class!
 import {AGED_BRIE, BACKSTAGE, SULFURAS} from "@/itemNames";
+import Reducer from "@/reducers/Reducer";
 
 export class Item {
   name: string;

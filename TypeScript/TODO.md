@@ -11,7 +11,7 @@
   - [x] I want to introduce CONSTANTS
   - [x] I want to rename gilded-rose.ts filename to be in camelCase
   - [x] I want to introduce item, instead of asking array by index each time 
-  - [ ] I want each item to have its own reducer function that is returned from item name
   - [ ] I want to remove redundant code branching
+  - [ ] I want each item to have its own reducer function that is returned from item name
   
   
