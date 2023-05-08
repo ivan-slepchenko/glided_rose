@@ -17,7 +17,7 @@ describe('Gilded Rose', () => {
       expect(items[0].quality).toBe(2);
     })
   }
-  describe('regular item', () => {
+  describe('Regular Item', () => {
     it('quality should degrade by one if sell by date has not passed', ()=>{
       const gildedRose = new GildedRose([new Item('regular item', 10, 8)]);
       let items = gildedRose.updateQuality();
@@ -37,7 +37,7 @@ describe('Gilded Rose', () => {
       expect(gildedRose.items[0].quality).toBe(50);
     })
   });
-  describe(AGED_BRIE, () => {
+  describe('Aged Brie Item' , () => {
     testIncreasingInQualityWhenThereIs20DaysToSell(AGED_BRIE);
     it('should increase in quality the older it gets when there 10 days or less to sell', () => {
       const gildedRose = new GildedRose([new Item(AGED_BRIE, 10, 1)]);
@@ -66,9 +66,11 @@ describe('Gilded Rose', () => {
       expect(items[0].quality).toBe(50);
     })
   })
-  describe('Sulfuras', ()=>{
+  describe('Sulfuras Item', ()=>{
     it('should never has to be sold', () => {
-      //TODO: nothing to test yet
+      const gildedRose = new GildedRose([new Item(SULFURAS, 10, 50)]);
+      let items = gildedRose.updateQuality();
+      expect(items[0].sellIn).toBe(10);
     })
     it('should never decreases in quality', ()=>{
       const gildedRose = new GildedRose([new Item(SULFURAS, 10, 50)]);
@@ -76,7 +78,7 @@ describe('Gilded Rose', () => {
       expect(items[0].quality).toBe(50);
     })
   })
-  describe('Backstage', ()=>{
+  describe('Backstage Item', ()=>{
     testIncreasingInQualityWhenThereIs20DaysToSell(BACKSTAGE);
     it('quality increases by 2 when there are only 10 days or less to sell it', ()=> {
       const gildedRose = new GildedRose([new Item(BACKSTAGE, 10, 7)]);

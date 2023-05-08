@@ -42,7 +42,7 @@ export class GildedRose {
           getReducerForItem(item).reduce(item);
           break;
         case SULFURAS:
-          this.updateQualityOld(item);
+          getReducerForItem(item).reduce(item);
           break;
         case BACKSTAGE:
           this.updateQualityOld(item);
