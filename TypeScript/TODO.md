@@ -11,11 +11,12 @@
   - [x] I want to introduce CONSTANTS
   - [x] I want to rename gilded-rose.ts filename to be in camelCase
   - [x] I want to introduce item, instead of asking array by index each time 
-  - [ ] I want to remove redundant code branching
-  - [ ] I want each item to have its own reducer function that is returned from item name
+  - [x] I want to remove redundant code branching
+  - [x] I want each item to have its own reducer function that is returned from item name
     - [x] Regular Item Reducer
-    - [ ] Backstage Reducer
-    - [ ] Aged Brie Reducer
-    - [ ] Sulfaras Reducer
+    - [x] Backstage Reducer
+    - [x] Aged Brie Reducer
+    - [x] Sulfaras Reducer
+    - [ ] Look at reducers and check if its reasonable to re-use some parts
   
   

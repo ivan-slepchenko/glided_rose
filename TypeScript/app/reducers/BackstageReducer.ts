@@ -1,6 +1,5 @@
 import { Reducer } from "@/reducers/Reducer";
 import {Item} from "@/gildedRose";
-import {AGED_BRIE, BACKSTAGE, SULFURAS} from "@/itemNames";
 
 export class BackstageReducer extends Reducer {
   constructor() {
