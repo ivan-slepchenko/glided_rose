@@ -9,16 +9,19 @@ export class Reducer {
   }
 
   reduce(item: Item) {
-    if (item.quality > 0) {
-      item.quality = item.quality - 1;
-    }
+    this.updateQuality(item);
+    this.updateSellIn(item);
+  }
 
-    item.sellIn = item.sellIn - 1;
-
+  updateQuality(item: Item) {
+    item.quality = item.quality - 1;
     if (item.sellIn < 0) {
-      if (item.quality > 0) {
-        item.quality = item.quality - 1
-      }
+      item.quality = item.quality - 1
     }
+    item.quality = Math.max(0, item.quality);
+  }
+
+  updateSellIn(item: Item) {
+    item.sellIn = item.sellIn - 1;
   }
 }

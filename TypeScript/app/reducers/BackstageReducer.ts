@@ -6,25 +6,22 @@ export class BackstageReducer extends Reducer {
     super('Backstage Reducer');
   }
 
-  reduce(item: Item) {
-    if (item.quality < 50) {
+  updateQuality(item: Item) {
+    if (item.sellIn > 0) {
       item.quality = item.quality + 1
-      if (item.sellIn < 11) {
-        if (item.quality < 50) {
-          item.quality = item.quality + 1
-        }
+      if (item.sellIn <= 10) {
+        item.quality = item.quality + 1
       }
-      if (item.sellIn < 6) {
-        if (item.quality < 50) {
-          item.quality = item.quality + 1
-        }
+      if (item.sellIn <= 5) {
+        item.quality = item.quality + 1
       }
-    }
-
-    item.sellIn = item.sellIn - 1;
-
-    if (item.sellIn < 0) {
+      item.quality = Math.min(50, item.quality);
+    } else {
       item.quality = 0;
     }
+  }
+
+  updateSellIn(item: Item) {
+    item.sellIn = Math.max(item.sellIn - 1, 0);
   }
 }

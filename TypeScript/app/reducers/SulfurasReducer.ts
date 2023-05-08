@@ -6,7 +6,11 @@ export class SulfurasReducer extends Reducer{
     super('Sulfuras Reducer');
   }
 
-  reduce(item: Item) {
+  updateQuality(item: Item) {
+    // do nothing
+  }
+
+  updateSellIn(item: Item) {
     // do nothing
   }
 }
