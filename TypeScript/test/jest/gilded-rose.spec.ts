@@ -1,4 +1,5 @@
 import { Item, GildedRose } from '@/gilded-rose';
+import {AGED_BRIE, BACKSTAGE, SULFURAS} from "@/itemNames";
 
 describe('Gilded Rose', () => {
   const testDecreasingByTwoWhenSellByDateIsPassed = (itemName: string) => {
@@ -36,26 +37,26 @@ describe('Gilded Rose', () => {
       expect(gildedRose.items[0].quality).toBe(50);
     })
   });
-  describe('Aged Brie', () => {
+  describe(AGED_BRIE, () => {
     //TODO: Fix behaviour I will consider it as a bug, and will consider Aged Brie to decrease in value when time to sell is over like regular item, but it increases in value when there is time to sell left.
-    testIncreasingInQualityWhenThereIs20DaysToSell('Aged Brie');
+    testIncreasingInQualityWhenThereIs20DaysToSell(AGED_BRIE);
     it('should increase in quality the older it gets when there 10 days or less to sell', () => {
-      const gildedRose = new GildedRose([new Item('Aged Brie', 10, 1)]);
+      const gildedRose = new GildedRose([new Item(AGED_BRIE, 10, 1)]);
       let items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(2);
       items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(3);
     })
     it('should increase in quality the older it gets when there 5 days or less to sell', () => {
-      const gildedRose = new GildedRose([new Item('Aged Brie', 5, 1)]);
+      const gildedRose = new GildedRose([new Item(AGED_BRIE, 5, 1)]);
       let items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(2);
       items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(3);
     })
-    testDecreasingByTwoWhenSellByDateIsPassed('Aged Brie')
+    testDecreasingByTwoWhenSellByDateIsPassed(AGED_BRIE)
     it('quality should never be more than 50 when sell in is positive', () =>{
-      const gildedRose = new GildedRose([new Item('Aged Brie', 1, 50)]);
+      const gildedRose = new GildedRose([new Item(AGED_BRIE, 1, 50)]);
       let items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(50);
     })
@@ -65,43 +66,43 @@ describe('Gilded Rose', () => {
       //TODO: nothing to test yet
     })
     it('should never decreases in quality', ()=>{
-      const gildedRose = new GildedRose([new Item('Sulfuras, Hand of Ragnaros', 10, 50)]);
+      const gildedRose = new GildedRose([new Item(SULFURAS, 10, 50)]);
       let items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(50);
     })
   })
-  describe('Backstage passes to a TAFKAL80ETC concert', ()=>{
-    testIncreasingInQualityWhenThereIs20DaysToSell('Backstage passes to a TAFKAL80ETC concert');
+  describe(BACKSTAGE, ()=>{
+    testIncreasingInQualityWhenThereIs20DaysToSell(BACKSTAGE);
     it('quality increases by 2 when there are only 10 days or less to sell it', ()=> {
-      const gildedRose = new GildedRose([new Item('Backstage passes to a TAFKAL80ETC concert', 10, 7)]);
+      const gildedRose = new GildedRose([new Item(BACKSTAGE, 10, 7)]);
       let items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(9);
       items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(11);
     })
     it('should never be more than 50 when there are only 10 days or less to sell it', () => {
-      const gildedRose = new GildedRose([new Item('Backstage passes to a TAFKAL80ETC concert', 10, 49)]);
+      const gildedRose = new GildedRose([new Item(BACKSTAGE, 10, 49)]);
       let items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(50);
       items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(50);
     })
     it('quality increases by 3 when there are only 5 days or less to sell it', ()=>{
-      const gildedRose = new GildedRose([new Item('Backstage passes to a TAFKAL80ETC concert', 5, 3)]);
+      const gildedRose = new GildedRose([new Item(BACKSTAGE, 5, 3)]);
       let items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(6);
       items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(9);
     })
     it('should never be more than 50 when there are only 5 days or less to sell it', () => {
-      const gildedRose = new GildedRose([new Item('Backstage passes to a TAFKAL80ETC concert', 5, 49)]);
+      const gildedRose = new GildedRose([new Item(BACKSTAGE, 5, 49)]);
       let items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(50);
       items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(50);
     })
     it('quality drops to 0 after the concert', ()=>{
-      const gildedRose = new GildedRose([new Item('Backstage passes to a TAFKAL80ETC concert', 0, 49)]);
+      const gildedRose = new GildedRose([new Item(BACKSTAGE, 0, 49)]);
       let items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(0);
     })
